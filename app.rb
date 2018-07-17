@@ -30,4 +30,9 @@ class App < Sinatra::Base
     "#{params[:word1]} #{params[:word2]} #{params[:word3]} #{params[:word4]} #{params[:word5]}."
   end
 
+  # accepts an operation and performs the operation on the two provided numbers
+  get '/:operation/:num1/:num2' do
+    params[:num1].to_i params[:operation] params[:num2].to_i
+  end
+
 end
