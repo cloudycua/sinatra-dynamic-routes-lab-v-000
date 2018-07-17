@@ -35,14 +35,14 @@ class App < Sinatra::Base
     operation = params[:operation]
     num1 = params[:num1].to_i
     num2 = params[:num2].to_i
-    if operation == "+"
-      answer = num1 + num2
-    elsif operation == "-"
-      answer = num1 - num2
-    elsif operation == "*"
-      answer = num1 * num2
-    elsif operation == "/"
-      answer = num1 / num2
+    when "+"
+      answer = params[:number1].to_i + params[:number2].to_i
+    when "-"
+      answer = params[:number1].to_i - params[:number2].to_i
+    when "*"
+      answer = params[:number1].to_i * params[:number2].to_i
+    else "/"
+      answer = params[:number1].to_i / params[:number2].to_i
     end
     answer.to_s
   end
