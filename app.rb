@@ -20,7 +20,7 @@ class App < Sinatra::Base
   get '/say/:number/:phrase' do
     final_string = ""
     (params[:number].to_i).times do
-      "#{params[:phrase]}"
+      final_string = "#{params[:phrase]}\n"
     end
   end
 
