@@ -32,7 +32,16 @@ class App < Sinatra::Base
 
   # accepts an operation and performs the operation on the two provided numbers
   get '/:operation/:number1/:number2' do
-    params[:number1].to_i params[:operation] params[:number2].to_i
+    case params[:operation]
+    when "+"
+      params[:number1].to_i + params[:number2].to_i
+    when "-"
+      params[:number1].to_i - params[:number2].to_i
+    when "*"
+      params[:number1].to_i * params[:number2].to_i
+    else "/"
+      params[:number1].to_i / params[:number2].to_i
+    end
   end
 
 end
