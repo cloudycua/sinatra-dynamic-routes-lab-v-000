@@ -31,16 +31,18 @@ class App < Sinatra::Base
   end
 
   # accepts an operation and performs the operation on the two provided numbers
-  get '/:operation/:number1/:number2' do
-    case params[:operation]
-    when "+"
-      answer = params[:number1].to_i + params[:number2].to_i
-    when "-"
-      answer = params[:number1].to_i - params[:number2].to_i
-    when "*"
-      answer = params[:number1].to_i * params[:number2].to_i
-    else "/"
-      answer = params[:number1].to_i / params[:number2].to_i
+  get '/:operation/:num1/:num2' do
+    operation = params[:operation] 
+    num1 = params[:num1].to_i
+    num2 = params[:num2].to_i
+    if operation == "+"
+      answer = num1 + num2
+    elsif operation == "-"
+      answer = num1 - num2
+    elsif operation == "*"
+      answer = num1 * num2
+    elsif operation == "/"
+      answer = num1 / num2
     end
     answer.to_s
   end
