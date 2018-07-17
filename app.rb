@@ -31,8 +31,8 @@ class App < Sinatra::Base
   end
 
   # accepts an operation and performs the operation on the two provided numbers
-  get '/:operation/:num1/:num2' do
-    params[:num1].to_i params[:operation] params[:num2].to_i
+  get '/:operation/:number1/:number2' do
+    params[:number1].to_i params[:operation] params[:number2].to_i
   end
 
 end
