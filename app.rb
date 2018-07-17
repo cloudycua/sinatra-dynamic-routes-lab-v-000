@@ -17,6 +17,10 @@ class App < Sinatra::Base
 
   # accepts a number and a phrase and returns that phrase
   # in a string the number of times given
-  get '/say/:number/:phrase'
+  get '/say/:number/:phrase' do
+    params[:number].times do
+      params[:phrase]
+    end
+  end
 
 end
