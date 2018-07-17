@@ -7,4 +7,8 @@ class App < Sinatra::Base
     params[:name].reverse
   end
 
+  # accepts a number and retrns the square of that number
+  # Note: values in params always come in as strings and
+  # that the return value should also be a string
+
 end
