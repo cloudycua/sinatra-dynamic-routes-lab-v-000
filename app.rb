@@ -15,4 +15,8 @@ class App < Sinatra::Base
     @square.to_s
   end
 
+  # accepts a number and a phrase and returns that phrase
+  # in a string the number of times given
+  get '/say/:number/:phrase'
+
 end
